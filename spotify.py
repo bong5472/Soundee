@@ -3,8 +3,8 @@ import spotipy
 import pprint
 
 
-client_id = "YOUR_CLIENT_ID"
-client_secret = "YOUR_CLIENT_SECRET"
+client_id = "client_id"
+client_secret = "client_secret"
 
 lz_uri = 'spotify:artist:6VuMaDnrHyPL1p4EHjYLi7' # Charlie Puth
 
