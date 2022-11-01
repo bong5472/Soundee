@@ -16,4 +16,3 @@ def imgchecking(imgsrc):
     print(rgb_arr)
     return rgb_arr, rgb_percent
 
-imgchecking('./a.jpg')
