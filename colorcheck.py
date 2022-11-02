@@ -1,7 +1,9 @@
 #color check
+
+
 import pandas as pd
 
-mood = pd.read_csv('./mood.csv',encoding='euc-kr')
+mood = pd.read_csv('mood.csv',encoding='cp949')
 
 def color_check(target_color):
     t_red,t_green,t_blue = target_color
