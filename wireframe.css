@@ -8,7 +8,7 @@ header {
     left: 0;
     right: 0;
     
-    height: 75px;
+    height: 12vh;
     color: white;
     background: white;
     font-weight: bold;
@@ -18,82 +18,101 @@ header {
   }
 
   div{
-    border: 1px solid red;
+    border: 2px dotted black;
   }
   
   .headerinner{
-    width: 100%;
+    width: 80vw;
     height: 100%;
     margin: 0px 10vw;
     display: flex;
+    /* border: 1px solid blue; */
   }
 
   .headerleft{
-    width: 20%;
+    width: 16vw;
     height: 100%;
   }
   .headercenter{
-    width: 60%;
+    width: 48vw;
     height: 100%;
   }
   .headerright{
-    width: 20%;
+    width: 16vw;
     height: 100%;
   }
 
   .firstmain{
-    margin-top: 75px;
+    margin-top: 12vh;
     width: 100%;
-    height: 500px;
+    height: 76vh;
 
     background: rgb(151, 153, 153);
-
-
   }
 
   .firstmainInner{
-    width: 80%;
+    width: 80vw;
     height: 100%;
     margin: 0px 10vw;
-
   }
-
+.blank{
+  width: 100%;
+  height: 12vh;
+}
   .secondmain{
-    margin : 0px;
-    margin-top: 75px;
     width: 100%;
-    height: 565px;
+    height: 76vh;
 
-    background: rgb(139, 226, 226);
+    background: rgb(172, 179, 179);
   }
 
   .secondmainInner{
-    width: 80%;
-    height: 500px;
+    width: 80vw;
+    height: 100%;
     margin: 0px 10vw;
     display: flex;
   }
 
   .secondleft{
     width: 100%;
-    height: 90%;
-    margin: 30px;
+    height: 72vh;
+    margin: 2vh 2vw; 
   }
   .secondright{
     width: 100%;
-    height: 90%;
-    margin: 30px;
+    height: 72vh;
+    margin: 2vh 2vw; 
   }
 
   .imginsert{
-    margin: 30px;
-    width: 500px;
-    height: 300px;
+    margin: 2vh 2vw; 
+    width: 30vw;
+    height: 30vh;
 
   }
 
   .urlinsert{
-    margin: 30px;
-    width: 88%;
-    height: 10%;
+    margin: 2vh 2vw; 
+    width: 30vw;
+    height: 5vh;
+  }
+
+
+  .thirdmain{
+    width: 100%;
+    height: 76vh;
+
+  }
+
+.thirdmainInner{
+  width: 80vw;
+  height: 100%;
+  margin: 0px 10vw;
+}
+
+  footer{
+    width: 100%;
+    height: 12vh;
+    /* margin: 0px 10vw; */
+    background-color: rgb(151, 150, 150);
   }
