@@ -5,12 +5,23 @@
 #   https://cloud.google.com/console
 # Please ensure that you have enabled the YouTube Data API for your project.
 
+# -*- coding: euc-kr -*-
+import sys
+import io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.detach(), encoding = 'utf-8')
+sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
+
+
+
+
+
 from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.tools import argparser
 
 
-DEVELOPER_KEY = "key_here"
+DEVELOPER_KEY = ""
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
@@ -45,11 +56,15 @@ def youtube_search(options):
     print("Videos:\n", "\n".join(videos), "\n")
     print("Channels:\n", "\n".join(channels), "\n")
     print("Playlists:\n", "\n".join(playlists), "\n")
+    print(argparser)
+
 
 
 if __name__ == "__main__":
-    argparser.add_argument("--q", help="Search term", default="모던한, 젠틀한, 모던한, 플레이리스트")
-    argparser.add_argument("--max-results", help="Max results", default=3)
+    argparser.add_argument("--q", help="Search term", default=" 맑은, 경쾌한, playlist")
+    argparser.add_argument("--max-results", help="Max results", default=5)
+    
     args = argparser.parse_args()
+    print(args)
 
     youtube_search(args)
