@@ -28,11 +28,15 @@ def youtube_search(search_word):
     search_response = youtube.search().list(
         q=search_word,
         part="id,snippet",
-        maxResults=3
+        maxResults=3,
+        order ='viewCount',
         ).execute()
     youtube_arr = []
-    for result in search_response.get("items",[]):
-        youtube_search.append(result["id"]["videoId"])
+    if len(search_response.get("items",[])) == 0:
+        return youtube_arr
+    else:
+        for result in search_response.get("items",[]):
+            youtube_arr.append(result["id"]["videoId"])
 
     return youtube_arr
 
