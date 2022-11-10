@@ -1,5 +1,8 @@
 
 from flask import Flask, render_template, request
+from PIL import Image
+from imgcheck import *
+from colorcheck import *
 
 app = Flask(__name__)
 
@@ -13,8 +16,10 @@ def input():
 
 @app.route('/output',methods=['GET','POST'])
 def output():
-    img = request.args.get('imgFile')
-    print(img)
+    img_file = request.files["file"]
+    result1, result2 = imgchecking(img_file)
+    search_word = color_check(result1) + ', ' + color_check(result2) + ', ' + 'playlist'
+    print(search_word)
     return render_template('output.html')
 
 
