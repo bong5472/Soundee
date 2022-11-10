@@ -20,45 +20,19 @@ DEVELOPER_KEY = ""
 YOUTUBE_API_SERVICE_NAME = "youtube"
 YOUTUBE_API_VERSION = "v3"
 
-def youtube_search(options):
+def youtube_search(search_word):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY)
 
     # Call the search.list method to retrieve results matching the specified
     # query term.
     search_response = youtube.search().list(
-        q=options.q,
+        q=search_word,
         part="id,snippet",
-        maxResults=options.max_results
+        maxResults=3
         ).execute()
+    youtube_arr = []
+    for result in search_response.get("items",[]):
+        youtube_search.append(result["id"]["videoId"])
 
-    videos = []
-    channels = []
-    playlists = []
+    return youtube_arr
 
-  # Add each result to the appropriate list, and then display the lists of
-  # matching videos, channels, and playlists.
-    for search_result in search_response.get("items", []):
-        if search_result["id"]["kind"] == "youtube#video":
-            videos.append("%s (%s)" % (search_result["snippet"]["title"],
-                                 search_result["id"]["videoId"]))
-        elif search_result["id"]["kind"] == "youtube#channel":
-            channels.append("%s (%s)" % (search_result["snippet"]["title"],
-                                   search_result["id"]["channelId"]))
-        elif search_result["id"]["kind"] == "youtube#playlist":
-            playlists.append("%s (%s)" % (search_result["snippet"]["title"],
-                                    search_result["id"]["playlistId"]))
-
-    print("Videos:\n", "\n".join(videos), "\n")
-    print("Channels:\n", "\n".join(channels), "\n")
-    print("Playlists:\n", "\n".join(playlists), "\n")
-    print(argparser)
-
-
-if __name__ == "__main__":
-    argparser.add_argument("--q", help="Search term", default=" 맑은, 경쾌한, playlist")
-    argparser.add_argument("--max-results", help="Max results", default=5)
-    
-    args = argparser.parse_args()
-    print(args)
-
-    youtube_search(args)
