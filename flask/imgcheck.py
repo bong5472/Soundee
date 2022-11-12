@@ -14,5 +14,5 @@ def imgchecking(imgsrc):
         rgb_percent.append(round((c[1] / pixel_count) * 100, 2))
         # print(f'{c[0]} : {round((c[1] / pixel_count) * 100, 2)}% ({c[1]})')
     # print(rgb_arr)
-    return rgb_arr[0], rgb_arr[1]
+    return rgb_arr[0], rgb_arr[1], rgb_arr[2]
 

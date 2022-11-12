@@ -19,10 +19,10 @@ def input():
 @app.route('/output',methods=['GET','POST'])
 def output():
     img_file = request.files["file"]
-    result1, result2 = imgchecking(img_file)
-    search_word1 = color_check(result1) + ' ' + color_check(result2) + ' ' + 'playlist'
-    search_word2 = color_check(result1) + ' playlist'
-    search_word3 = color_check(result2) + ' playlist'
+    result1, result2, result3 = imgchecking(img_file)
+    search_word1 = color_check(result1) + ' ' + color_check(result2) + ' ' + '플레이리스트'
+    search_word2 = color_check(result1) + ' ' + color_check(result3) + ' ' + '플레이리스트'
+    search_word3 = color_check(result2) + ' ' + color_check(result3) + ' ' + '플레이리스트'
 
     print(search_word1)
 
