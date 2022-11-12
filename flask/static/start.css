@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+
+body{   
+    background: url('/static/pink.jpg')  , rgba(0, 0, 0, 0.5);
+    background-size: cover ;
+    padding: 0;
+    margin: 0;
+    background-blend-mode: multiply;
+    font-family: "Roboto", sans-serif;
+
+}
+
+h1{
+    font-size: 7vw;
+    color: white;
+    margin: 0;
+}
+h2{
+    font-size: 4vw;
+    color: white;
+    margin: 0;
+}
+
+.mainfont{
+    position: fixed;
+    left: 10vw;
+    top:35vh;
+}
+
+.startbutton{
+    position: fixed;
+    left: 55vw;
+    top: 40vh; 
+}
+
+button,
+button::after {
+    cursor: pointer;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+button {
+    background: none;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 1em auto;
+    padding: 2em 6em;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  button::before,
+  button::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+  
+  button:hover {
+    color: #6e2e63;
+  }
+  button::after {
+    height: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  button:hover:after {
+    height: 100%;
+  }
+
+  @media screen and (max-width:1023px) {
+    h1{
+        font-size: 10vw;
+        color: white;
+        margin: 0;
+    }
+    h2{
+        font-size: 5vw;
+        color: white;
+        margin: 0;
+    }
+
+    .mainfont{
+        position: absolute;
+        display: inline;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+    
+    .startbutton{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+    }
+    }
+    
+    @media screen and (max-width:767px) {
+
+    /* 모바일 */
+    h1{
+        font-size: 14vw;
+        color: white;
+        margin: 0;
+    }
+    h2{
+        font-size: 7vw;
+        color: white;
+        margin: 0;
+    }
+    
+    }
+
