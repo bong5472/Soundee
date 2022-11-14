@@ -24,11 +24,14 @@ def output():
     search_word2 = color_check(result1) + ' ' + color_check(result3) + ' ' + '플레이리스트'
     search_word3 = color_check(result2) + ' ' + color_check(result3) + ' ' + '플레이리스트'
 
-    print(search_word1)
-
+    print(search_word1,search_word2,search_word3)
     youtube_result = youtube_search(search_word1) + youtube_search(search_word2) + youtube_search(search_word3)
-      
-    video_id = random.sample(youtube_result,3)  
+    print(youtube_result)
+    video_id = []
+    if len(youtube_result) >= 3:      
+        video_id = random.sample(youtube_result,3)
+    else:
+        video_id = youtube_search(color_check(result1) + ' 플레이리스트')[:2]  
     return render_template('output.html',video_id1 = video_id[0]
                                         ,video_id2 = video_id[1]
                                         ,video_id3 = video_id[2]
