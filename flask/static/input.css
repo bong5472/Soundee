@@ -1,16 +1,169 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 
 
-body{   
-    background: url('/static/pink.jpg')  , rgba(0, 0, 0, 0.5);
-    background-size: cover ;
+body {
+    background: url('/static/start.jpg'),url('/static/pink.jpg'), rgba(0, 0, 0, 0.5);
+    background-size: cover;
     padding: 0;
     margin: 0;
     background-blend-mode: multiply;
     font-family: "Roboto", sans-serif;
+    justify-content: center;
+    align-items: center;
+    position : relative;
 
 }
 
-.word{
+.word {
+    position: absolute;
+    left: 20vw;
+    top: 20vh;
+}
+
+.wordhead {
+    font-size: 7vw;
+    color: white;
+    margin: 0;
+}
+
+.wordbody {
+    font-size: 2.5vw;
+    color: white;
+    margin: 0;
+}
+#imgform{
+    position: fixed;
+    left: 20vw;
+    top: 68vh; 
+    height: 5vh;
+    padding-left: 10px;
+    font-size: 3vh;
+    font-weight: bold;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    width: 35vw;
+    background-color: white;
+}
+
+form input::file-selector-button {
+    display: none;
+  }
+  .file{
+    font-size : 2vh;
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+.formbutton{
+    position: fixed;
+    left: 60vw;
+    top: 65vh; 
+}
+
+button,
+button::after {
+    cursor: pointer;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+button {
+    background: none;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 1em auto;
+    padding: 0.5em 1.5em;
+    position: relative;
+    text-transform: uppercase;
+  }
+  
+  button::before,
+  button::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    z-index: -1;
+  }
+  
+  button:hover {
+    color: #6e2e63;
+  }
+  button::after {
+    height: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  
+  button:hover:after {
+    height: 100%;
+  }
+
+
+
+  @media screen and (max-width:1023px) {
+
+    .word {
+        position: absolute;
+        left: 15vw;
+        top: 20vh;
+    }
+.wordhead {
+    font-size: 8vw;
+    color: white;
+    margin: 0;
+}
+
+.wordbody {
+    font-size: 4vw;
+    color: white;
+    margin: 0;
+}
+#imgform{
+    left: 15vw;
+    top: 68vh; 
+    height: 7vh;
+}
+
+    }
     
+    @media screen and (max-width:767px) {
+
+    /* 모바일 */
+    .word {
+        position: absolute;
+        left: 15vw;
+        top: 20vh;
+    }
+.wordhead {
+    font-size: 10vw;
+    color: white;
+    margin: 0;
 }
+
+.wordbody {
+    font-size: 4vw;
+    color: white;
+    margin: 0;
+}
+#imgform{
+    left: 15vw;
+    top: 60vh; 
+    height: 5vh;
+    width: 60vw;
+}
+.formbutton{
+    position: fixed;
+    left: 15vw;
+    top: 70vh;
+}
+
+}
+
